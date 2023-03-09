@@ -38,7 +38,7 @@ function TodoList() {
     const [selectedButton, setSelectedButton] = useState<string>("All");
 
     //Nombres botones
-    const filterButtons = ["All", "Pending", "Completed"];
+    const filterButtons: string[] = ["All", "Pending", "Completed"];
 
     useEffect(() => {
         //guarda los datos en el local storage, escuchando a listItems
@@ -94,7 +94,7 @@ function TodoList() {
     return (
         <div>
             <Todo listItems={listItems} setListItems={setListItems} />
-            <Box className={s.buttonsContainer} >
+            <Box className={s.buttonsContainer}>
                 {
                     filterButtons.map((buttons, i) => {
                         return (

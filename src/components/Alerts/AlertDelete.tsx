@@ -12,7 +12,7 @@ function AlertDelete( { setSelectedIndexDelete, selectedIndexDelete, listItems, 
 
     const handleDelete = (e: React.MouseEvent<HTMLElement>) => {
         e.preventDefault();
-        const filterListItems = listItems.filter((l, i) => l.id !== selectedIndexDelete)
+        const filterListItems = listItems.filter((l) => l.id !== selectedIndexDelete)
         setListItems(filterListItems);
         setSelectedIndexDelete(null);
     }
