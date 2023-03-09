@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+}
+
+.form {
+    display: flex;
+    width: 37rem;
+}
+
+.textField {
+    width: 30rem;
+}
+
+.formButton {
+    height: 100%;
+}
+
+@media screen and (max-width: 500px) {
+
+    .form {
+        width: 24rem;
+    }
+
+    .textField {
+        width: 19rem;
+    }
+
+    .formButton {
+        height: 90%;
+    }
+}
