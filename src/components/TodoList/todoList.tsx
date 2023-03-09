@@ -31,15 +31,19 @@ function TodoList() {
     //En principio guarda el texto a editar, luego el texto editado.
     const [editedText, setEditedText] = useState<string>('');
 
+    //variable que utilizo para el alert de tareas repetidas
     const [openRepeated, setOpenRepeated] = useState<boolean>(false);
 
+    //Guardo el boton en el que me encuentro parado/seleccionado. 
     const [selectedButton, setSelectedButton] = useState<string>("All");
 
+    //Nombres botones
     const filterButtons = ["All", "Pending", "Completed"];
 
     useEffect(() => {
         //guarda los datos en el local storage, escuchando a listItems
         localStorage.setItem('listItems', JSON.stringify(listItems));
+        //cada vez que hay un cambio en el list items, vuelvo a enviarlo a la funcion de filtrados
         handleFilters(listItems, selectedButton);
     }, [listItems])
 
@@ -66,6 +70,7 @@ function TodoList() {
         setListItems(newListItems)
     }
 
+    //funcion que realiza todos los filtrados.
     const handleFilters = (allItems: Items[], type: string) => {
         setSelectedButton(type);
         switch (type) {

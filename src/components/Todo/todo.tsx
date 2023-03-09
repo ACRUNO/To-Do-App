@@ -32,6 +32,7 @@ function Todo({ setListItems, listItems }: InputProps) {
         for (const item of listItems) {
             if (item.task === input.trim().toUpperCase()) return setOpenRepeated(true);
         }
+        //agrega el item a la lista, siempre toma de id uno mas que su anterior, en caso de que no haya ninguno, toma 0
         setListItems([...listItems, { id: listItems.length ? listItems[listItems.length - 1].id + 1 : 0, task: input.trim().toUpperCase(), completed: false }])
         setInput('')
     }
